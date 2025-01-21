@@ -4,15 +4,24 @@ Acorde a la base de datos de una inmobiliaria, se pretende consultar quienes son
 ## Fechas
 
 Es este proyecto se detecta que las fechas no son homogéneas y que son del tipo TEXT por lo cual se procede a usar CONCAT, LPAD, CASE WHEN THEN, para tener fechas estructuradas.
-![Screenshot 2025-01-21 at 12 18 09](https://github.com/user-attachments/assets/63a10657-b381-4f17-a4c4-c96e82deb823)
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/63a10657-b381-4f17-a4c4-c96e82deb823" alt="Fechas" style="width:25%;">
+</div>
+
 
 
 ## Clientes Morosos por Fecha
 
-![Screenshot 2025-01-21 at 12 18 52](https://github.com/user-attachments/assets/5f489b15-edba-468e-a58f-53700737086e)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5f489b15-edba-468e-a58f-53700737086e" alt="Morosos por Fecha" style="width:25%;">
+</div>
+
 
 ## Clientes Morosos por Saldo Deudor
 
 Se calcula el saldo deudor con la diferencia entre la suma de pagos y el precio de venta, posteriormente se agrupan por ID_venta, Nombre del cliente y Monto de Venta.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/95686ee1-64d3-433d-9d45-ea9d602dd4f4" alt="Morosos por Saldo Deudor" style="width:25%;">
+</div>
 
-![Screenshot 2025-01-21 at 12 19 34](https://github.com/user-attachments/assets/95686ee1-64d3-433d-9d45-ea9d602dd4f4)
