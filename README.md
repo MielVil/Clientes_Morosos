@@ -29,15 +29,21 @@ WHEN: Usado para filtrar la infromación de consulta, trae infomación que cumpl
 CASE WHEN THEN: Devuelve diferentes resultados dependiendo de las caracteristicas especificas de la información. En este caso es usado para indicar cuando usar LPAD y completar fechas.
 
 ### 4. Cruces de tablas:
+
 JOIN USING: Permite unir bases de datos a partir de un ID en común, este JOIN tiene como condición hacer la unión simepre y cuando se tenga mismo nombre en la variable.
 
 ### 5. Consulta de Datos:
-USE:
-SELECT:
-DISTINCT:
-GROUP BY:
-HAVING:
-AS:
+
+USE: Se usa para indicar cual es la base de datos con la que se va a trabajar.
+
+SELECT: Permite seleccionar todas las variables o variables especificas de una tabla, por lo general se usa con FROM, para saber de que tabla se solicitan las variables.
+
+DISTINCT: Elimina duplicados en la consulta de información. 
+GROUP BY: Agrupa resultados acorde a una o más columnas, por lo general es útil cuando se busca sumar, promediar y hacer algún otro tipo de calculo por categorías o jerarquías.
+
+HAVING: Filtra resuntados de GROUP BY si se cumple con condiciones especificas.
+
+AS: Es útil para dar un alias que ayude a identificar alguna columna consultada.
 
 
 DATE, UPDATE, SET, CONCAT, LPAD, SUBSTRING_INDEX, CASE-WHEN-ELSE, USE, SELECT, DISTINCT, JOIN, WHEN, AS DECIMAL, AS, GROUP BY, HAVING.
