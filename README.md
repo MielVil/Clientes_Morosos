@@ -4,6 +4,35 @@ Acorde a la base de datos de una inmobiliaria, se pretende consultar quienes son
 ## Conceptos usados
 En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queries, transformación de fechas, consultas, filtrados, actualización de información, cruce de tablas, y agrupaciones. 
 
+## SQL STATEMENTS USADOS
+
+### 1. Modificación de la Base de Datos:
+ALTER TABLE: Altera la estrucutra de la base, en este caso agregando columnas.
+UPDATE: Actualiza la información de la base de datos.
+SET: Permite especificar que valores cambiar en los registros.
+
+### 2. Operadores y Manipulación de Datos:
+CONCAT:
+LPAD:
+SUBSTRING_INDEX:
+AS DECIMAL:
+
+### 3. Condicionales:
+CASE WHEN THEN:
+WHEN:
+### 4. Cruces de tablas:
+JOIN USING:
+
+### 5. Consulta de Datos:
+USE:
+SELECT:
+DISTINCT:
+GROUP BY:
+HAVING:
+AS:
+
+
+DATE, UPDATE, SET, CONCAT, LPAD, SUBSTRING_INDEX, CASE-WHEN-ELSE, USE, SELECT, DISTINCT, JOIN, WHEN, AS DECIMAL, AS, GROUP BY, HAVING.
 
 
 ## Limpieza de la base de datos
