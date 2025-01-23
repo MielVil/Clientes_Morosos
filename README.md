@@ -56,7 +56,26 @@ Como primer paso se procede a realizar un cruce la información entre las tres t
 Es este proyecto se detecta que las fechas no son homogéneas y que son del tipo TEXT por lo cual se procede a usar CONCAT, LPAD, CASE WHEN THEN, para tener fechas estructuradas.
 
 **¿Por que no usar DATE o STR_TO_SATE directamente?**
+ Para evitar duplicar código y tener que crear diferentes combinaciones de casos, como fechas se puede tener que el día, mes o año sea de dos digitos, uno o cuatro. 
 
+ El **día** puede aparecer como: '1' o '01'
+ Análogamente pasa los mismo con el **mes**: '9' o '09'
+ Año: '16' o '2016'
+
+ Para evitar tener que lidiar con las posibles combinaciones de fechas y realizar 
+ cambios acorde a la fecha como:
+
+| Formato de Fecha | Código para convertir de String a Date |
+|------------------|----------------------------------------|
+|    '01/09/2016'  |      STR_TO_DATE(Fecha,'%d/%m/%Y')     |
+|    '1/09/2016'   |      STR_TO_DATE(Fecha,'%e/%b/%Y')     |
+|    '01/9/2016'   |      STR_TO_DATE(Fecha,'%d/%c/%Y')     |
+|    '01/09/16'    |      STR_TO_DATE(Fecha,'%d/%m/%y')     |
+|        ...       |                   ...                  |
+|     '1/9/16'     |      STR_TO_DATE(Fecha,'%e/%c/%y')     |
+
+Se tendrían en total **8** posibles combinaciones si se toma el como formato de un dígito o dos, si en el mes se desea incluir escribir el mes como Jan, May, etc..
+se tendrían en total **12** posibles combinaciones. 
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/63a10657-b381-4f17-a4c4-c96e82deb823" alt="Fechas" style="width:25%;">
