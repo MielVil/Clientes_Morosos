@@ -56,7 +56,7 @@ Como primer paso se procede a realizar un cruce la información entre las tres t
 Es este proyecto se detecta que las fechas no son homogéneas y que son del tipo TEXT por lo cual se procede a usar CONCAT, LPAD, CASE WHEN THEN, para tener fechas estructuradas.
 
 **¿Por que no usar DATE o STR_TO_SATE directamente?**
- Para evitar duplicar código y tener que crear diferentes combinaciones de casos, como fechas se puede tener que el día, mes o año sea de dos digitos, uno o cuatro. 
+ Para evitar duplicar código y tener que crear diferentes combinaciones de casos, como fechas se puede tener que el día, mes o año sea de dos dígitos, uno o cuatro. 
 
  El **día** puede aparecer como: '1' o '01'
  Análogamente pasa los mismo con el **mes**: '9' o '09'
@@ -88,6 +88,8 @@ Para generalizar esta idea, y no tener que escribir código para tantas combinac
 
 ## Clientes Morosos por Fecha
 
+Una vez que se tenga la transformación de la fecha, se puede trabajar con ella, para comparar con fechas de otras tablas. En este caso de compara la **Fecha_venta** y la **Fecha_pago**. Donde se cataloga como moroso al cliente que pague posterior a la fecha de venta. 
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/5f489b15-edba-468e-a58f-53700737086e" alt="Morosos por Fecha" style="width:25%;">
 </div>
@@ -95,7 +97,10 @@ Para generalizar esta idea, y no tener que escribir código para tantas combinac
 
 ## Clientes Morosos por Saldo Deudor
 
-Se calcula el saldo deudor con la diferencia entre la suma de pagos y el precio de venta, posteriormente se agrupan por ID_venta, Nombre del cliente y Monto de Venta.
+Se calcula el saldo deudor como la diferencia entre la suma de pagos y el precio de venta, posteriormente se agrupan por ID_venta, Nombre del cliente y Monto de Venta.
+
+Se determina que el cliente es moroso si tiene saldo deudor.
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/95686ee1-64d3-433d-9d45-ea9d602dd4f4" alt="Morosos por Saldo Deudor" style="width:25%;">
 </div>
