@@ -8,20 +8,28 @@ En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queri
 
 ### 1. Modificación de la Base de Datos:
 ALTER TABLE: Altera la estrucutra de la base, en este caso agregando columnas.
+
 UPDATE: Actualiza la información de la base de datos.
+
 SET: Permite especificar que valores cambiar en los registros.
 
 ### 2. Operadores y Manipulación de Datos:
-CONCAT:
-LPAD:
-SUBSTRING_INDEX:
-AS DECIMAL:
+CONCAT: Permite unir cadenas de textos almacenadas en diferentes variables.
+
+LPAD: Rellena una cadena por la izquierda con un caracter especifico para tener una longitud es especifico. Por ejemplo, en el caso de este proyecto el día se encuentra como 05 o 5, para tener una estructura homogenea se rellena el segundo caso para que el resultado final sea 05.
+
+SUBSTRING_INDEX: Toma una parte de una cadena o string tomando en cuenta algún delimitador. Ejemplos de delimitadores: "|", ";", "/", etc.
+
+AS DECIMAL: Convierte una variable a tipo decimal.
 
 ### 3. Condicionales:
-CASE WHEN THEN:
-WHEN:
+
+WHEN: Usado para filtrar la infromación de consulta, trae infomación que cumpla certa condición. Ej: Ventas mayores a 500, traer clientes que tengan ventas, etc.
+
+CASE WHEN THEN: Devuelve diferentes resultados dependiendo de las caracteristicas especificas de la información. En este caso es usado para indicar cuando usar LPAD y completar fechas.
+
 ### 4. Cruces de tablas:
-JOIN USING:
+JOIN USING: Permite unir bases de datos a partir de un ID en común, este JOIN tiene como condición hacer la unión simepre y cuando se tenga mismo nombre en la variable.
 
 ### 5. Consulta de Datos:
 USE:
