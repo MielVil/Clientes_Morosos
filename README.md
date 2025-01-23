@@ -74,8 +74,11 @@ Es este proyecto se detecta que las fechas no son homogéneas y que son del tipo
 |        ...       |                   ...                  |
 |     '1/9/16'     |      STR_TO_DATE(Fecha,'%e/%c/%y')     |
 
-Se tendrían en total **8** posibles combinaciones si se toma el como formato de un dígito o dos, si en el mes se desea incluir escribir el mes como Jan, May, etc..
+Se tendrían en total **8** posibles combinaciones si se toma el mes como formato de un dígito o dos, si en el mes se desea incluir escribir el mes como Jan, May, etc..
 se tendrían en total **12** posibles combinaciones. 
+
+Para generalizar esta idea, y no tener que escribir código para tantas combinaciones, se usa "/" como delimitador, para identificar el día, mes y año. De tal manera que aquellas partes de la fecha que contengan un solo dígito se agregue un 0 al inicio y se fuera concatenar de tal forma que se logre tener un formato uniforme, para una posterior conversión de STRING a DATE.
+
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/63a10657-b381-4f17-a4c4-c96e82deb823" alt="Fechas" style="width:25%;">
