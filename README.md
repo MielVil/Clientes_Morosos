@@ -51,9 +51,12 @@ En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queri
 
 
 ## Limpieza de la base de datos
-Como primer paso de procede a realizar un cruce la información entre las tres tablas existentes: 
+Como primer paso se procede a realizar un cruce la información entre las tres tablas existentes: 
 
 Es este proyecto se detecta que las fechas no son homogéneas y que son del tipo TEXT por lo cual se procede a usar CONCAT, LPAD, CASE WHEN THEN, para tener fechas estructuradas.
+
+**¿Por que no usar DATE o STR_TO_SATE directamente?**
+
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/63a10657-b381-4f17-a4c4-c96e82deb823" alt="Fechas" style="width:25%;">
