@@ -1,8 +1,12 @@
 # Clientes_Morosos
 Acorde a la base de datos de una inmobiliaria, se pretende consultar quienes son los cliente morosos, existen dos clasificaciones, aquellos que no cumplen con la fecha de pago y venta, y la segunda categoría es constituida por clientes que aún no han terminado de realizar sus pagos. Esa consulta se realiza con MySQL Workbench.
 
+**Funciones:** 
+1) Crea una nueva tabla "balance_pagos", que muestra el saldo deudor de los clientes.
+2) Se crea un Trigger que actualiza la balanza de pagos cada vez que se ingrese un nuevo pago en la tabla "pagos".
+
 ## Conceptos usados
-En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queries, transformación de fechas, consultas, filtrados, actualización de información, cruce de tablas, y agrupaciones. 
+En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queries, transformación de fechas, consultas, filtrados, actualización de información, cruce de tablas, agrupaciones, triggers, joins y delimiter
 
 ## SQL STATEMENTS USADOS
 
@@ -12,6 +16,8 @@ En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queri
 **UPDATE:** Actualiza la información de la base de datos.
 
 **SET:** Permite especificar que valores cambiar en los registros.
+
+**CREATE TABLE: ** Crea una nueva tabla con información de consulta.
 
 ### 2. Operadores y Manipulación de Datos:
 
@@ -24,6 +30,10 @@ En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queri
 **DATE:** Convierte variables a tipo Fecha, tambien se puede usar STR_TO_DATE, para pasar de un string a fecha.
 
 **AS DECIMAL:** Convierte una variable a tipo decimal.
+
+**TRIGGER:** Crea un disparador que actualiza la balanza de pagos cuando se agrega nueva información de pago.
+
+**LIMIT:** Limita la actualización de datos para poder usar UPDATE.
 
 ### 3. Condicionales:
 
@@ -49,6 +59,16 @@ En este proyecto se hace uso de diversos conceptos como sub-consulta / sub-queri
 
 **AS:** Es útil para dar un alias que ayude a identificar alguna columna consultada.
 
+
+## Instalación
+Crear un SCHEMA y cargar las tablas .csv que aparecen en el repositorio, son tres tablas: "clientes", "pagos" y "ventas".
+Ejecutar los códigos SQL en el siguiente orden: 
+1) Clientes_Morosos.sql
+2) tabla-balance-pagos.sql
+3) trigger.sql
+
+
+Explicación sobre lo que se realiza en el proyecto y con los sql:
 
 ## Limpieza de la base de datos
 Como primer paso se procede a realizar un cruce la información entre las tres tablas existentes: 
@@ -102,6 +122,19 @@ Se calcula el saldo deudor como la diferencia entre la suma de pagos y el precio
 Se determina que el cliente es moroso si tiene saldo deudor.
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/95686ee1-64d3-433d-9d45-ea9d602dd4f4" alt="Morosos por Saldo Deudor" style="width:25%;">
+  <img src="https://github.com/user-attachments/assets/95686ee1-64d3-433d-9d45-ea9d602dd4f4" alt="Morosos por Saldo Deudor" style="width:45%;">
 </div>
+
+## Creación de tabla de balance
+Surge la necesidad de crear un resumen sobre los clientes que cuentan con saldo deudor y la cantidad del mismo. Existen cinco variables: ID_Cliente, Nombre (del cliete), Venta_Total (resumen en términos monetarios de las ventas que ha realizado el cliente), Pago_Total (Resumen de todos los pagos que se han realizado) y Balance (diferencia entre la venta total y pago total)
+
+Se busca que esta tabla sea actualizada cada vez que se registre un nuevo pago por parte del cliente, donde solo se renueven los montos correspondientes a las variables Pago_Total y Balance, se debe tomar en cuenta que al registrarse un nuevo pago, el Balance debe de disminuir mientras que el Pago_Total debe de ir en aumento para el cliente correspondiente.
+
+<div align="center">
+<img style="width:45%;" alt="Tabla de Balance de Pagos" src="https://github.com/user-attachments/assets/dc26985a-c30f-442c-a537-425f426ddf75" />
+</div>
+
+## TRIGGER
+Es el que realizara la automatización de actualizar la tabla de balance de pagos cuando se realice un nuevo registro de pago al cliente indicado, para hacer esta acualización, en el TRIGGER se realiza el pegado de dos tablas para poder indicar el ID_Cliente que realiza el abono a su deuda.
+
 
